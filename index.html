@@ -42,7 +42,7 @@
     // Fungsi untuk menyetel cookie
     function setCookie(nama, nilai, hariKadaluarsa) {
       const d = new Date();
-      d.setTime(d.getTime() + (hariKadaluarsa * 24 * 60 * 60 * 1000));
+      d.setTime(d.getTime() + (hariKadaluarsa * 24 * 60 * 60 * 2025));
       const expires = "expires=" + d.toUTCString();
       document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
     }
@@ -80,7 +80,7 @@
 </head>
 <body onload="cekCookie()">
 
-  <h1>Selamat Datang di Situs Kami!</h1>
+  <h1>Selamat Datang di Situs Saya!</h1>
   <p>Nama Anda akan disimpan menggunakan cookies selama 7 hari.</p>
 
 </body>
