@@ -43,6 +43,11 @@
       background-color: #e9f7ef;
     }
 
+    .detail-row {
+      display: none;
+      background-color: #f1fdf6;
+    }
+
     .navbar {
       margin-bottom: 30px;
     }
@@ -84,23 +89,32 @@
   <!-- Judul Halaman -->
   <h2>Tentang Saya</h2>
 
-  <!-- Tabel Informasi Diri (interaktif) -->
+  <!-- Tabel Interaktif -->
   <table id="infoTable">
     <tr>
       <th>Aspek</th>
       <th>Informasi</th>
     </tr>
-    <tr onclick="showDetail('Nama: Andrika Rahmasyaputra')">
+    <tr onclick="toggleDetail(this)">
       <td>Nama</td>
       <td>Andrika Rahmasyaputra</td>
     </tr>
-    <tr onclick="showDetail('NIM: 220709010')">
+    <tr class="detail-row">
+      <td colspan="2">Nama lengkap saya adalah Andrika Rahmasyaputra, seorang mahasiswa aktif yang antusias di dunia informasi.</td>
+    </tr>
+    <tr onclick="toggleDetail(this)">
       <td>NIM</td>
       <td>220709010</td>
     </tr>
-    <tr onclick="showDetail('Program Studi: Perpustakaan dan Sains Informasi')">
+    <tr class="detail-row">
+      <td colspan="2">NIM saya adalah 220709010, yang menandakan saya terdaftar sebagai mahasiswa angkatan 2022.</td>
+    </tr>
+    <tr onclick="toggleDetail(this)">
       <td>Program Studi</td>
       <td>Perpustakaan dan Sains Informasi</td>
+    </tr>
+    <tr class="detail-row">
+      <td colspan="2">Saya sedang menempuh pendidikan di Program Studi Perpustakaan dan Sains Informasi.</td>
     </tr>
   </table>
 
@@ -112,8 +126,11 @@
   <!-- Script Bootstrap & Interaktif -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function showDetail(message) {
-      alert(message);
+    function toggleDetail(row) {
+      const next = row.nextElementSibling;
+      if (next && next.classList.contains('detail-row')) {
+        next.style.display = next.style.display === 'table-row' ? 'none' : 'table-row';
+      }
     }
   </script>
 </body>
