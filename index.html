@@ -157,17 +157,39 @@
     </div>
 
     <div class="cookie-bar" id="cookieBar">
-        Website ini menggunakan cookies untuk meningkatkan pengalaman Anda. Dengan melanjutkan, Anda menyetujui penggunaan cookies kami.
-        <button class id="btn btn-greenpink">Setuju</button>
-        <button class id="btn btn-outline-greenpink">Tolak</button>
-    </div>
+    Website ini menggunakan cookies untuk meningkatkan pengalaman Anda. Dengan melanjutkan, Anda menyetujui penggunaan cookies kami.
+    <button class="btn btn-greenpink" id="acceptCookies">Setuju</button>
+    <button class="btn btn-outline-greenpink" id="declineCookies">Tolak</button>
+</div>
 
-    <script>
-        function showTime() {
-            const now = new Date();
-            document.getElementById('jam').innerText = "Waktu sekarang: " + now.toLocaleTimeString();
+<script>
+    function showTime() {
+        const now = new Date();
+        document.getElementById('jam').innerText = "Waktu sekarang: " + now.toLocaleTimeString();
+    }
+
+    // Fungsi untuk menyembunyikan cookie bar
+    function hideCookieBar() {
+        document.getElementById('cookieBar').style.display = 'none';
+    }
+
+    // Cek apakah sudah ada preferensi pengguna
+    window.onload = function () {
+        const cookiePreference = localStorage.getItem("cookieConsent");
+        if (cookiePreference === "accepted" || cookiePreference === "declined") {
+            hideCookieBar();
         }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    };
+
+    // Tombol Setuju
+    document.getElementById("acceptCookies").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        hideCookieBar();
+    });
+
+    // Tombol Tolak
+    document.getElementById("declineCookies").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "declined");
+        hideCookieBar();
+    });
+</script>
