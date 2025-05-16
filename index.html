@@ -33,6 +33,59 @@
     <p>Website Ini digunakan untuk informasi mengenai tugas Pengembangan Web saya </p>
     </p>
     <a href="https://library.usu.ac.id"target="_blank">Perpustakaan Usu</a>
+        <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Contoh Cookies</title>
+  <script>
+    // Fungsi untuk menyetel cookie
+    function setCookie(nama, nilai, hariKadaluarsa) {
+      const d = new Date();
+      d.setTime(d.getTime() + (hariKadaluarsa * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
+    }
+
+    // Fungsi untuk membaca cookie
+    function getCookie(nama) {
+      const namaCookie = nama + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(namaCookie) === 0) {
+          return c.substring(namaCookie.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // Fungsi untuk menyapa pengguna
+    function cekCookie() {
+      const namaPengguna = getCookie("namaPengguna");
+      if (namaPengguna !== "") {
+        alert("Selamat datang kembali, " + namaPengguna + "!");
+      } else {
+        const nama = prompt("Masukkan nama Anda:", "");
+        if (nama !== "" && nama != null) {
+          setCookie("namaPengguna", nama, 7);
+        }
+      }
+    }
+  </script>
+</head>
+<body onload="cekCookie()">
+
+  <h1>Selamat Datang di Situs Kami!</h1>
+  <p>Nama Anda akan disimpan menggunakan cookies selama 7 hari.</p>
+
+</body>
+</html>
+
     </ul>
     <footer class="bg-success bg-opacity-50">
         <p>&copy; <b>2025 ANDRIKA RAHMASYAPUTRA|Hak Cipta<p>
