@@ -90,20 +90,21 @@
 
   <div class="contact-form">
     <h1>Hubungi Saya</h1>
-    <form action="#" method="post">
+    <form action="https://formspree.io/f/mgvkdlby" method="POST" id="kontakForm">
       <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="nama" placeholder="Nama Anda" required>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Anda" required>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="nama@email.com" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="nama@email.com" required>
       </div>
       <div class="mb-3">
         <label for="pesan" class="form-label">Pesan</label>
-        <textarea class="form-control" id="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+        <textarea class="form-control" id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
       </div>
       <button type="submit" class="btn btn-custom">Kirim Pesan</button>
+      <p id="form-status" class="text-center mt-3"></p>
     </form>
     <a href="index.html" class="back-link">← Kembali ke Beranda</a>
   </div>
@@ -144,6 +145,41 @@
       retina_detect: true
     });
   </script>
+
+  <!-- Formspree Response Handler -->
+  <script>
+    const form = document.getElementById("kontakForm");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = form.action;
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          status.textContent = "Pesan Anda berhasil dikirim!";
+          status.style.color = "#1de9b6";
+          form.reset();
+        } else {
+          status.textContent = "Terjadi kesalahan. Silakan coba lagi.";
+          status.style.color = "red";
+        }
+      } catch (error) {
+        status.textContent = "Gagal mengirim. Periksa koneksi internet Anda.";
+        status.style.color = "red";
+      }
+    });
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
