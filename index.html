@@ -17,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* Animasi gradasi */
     .gradient-bg {
       position: fixed;
       top: 0; left: 0;
@@ -35,7 +34,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Partikel */
     #particles-js {
       position: fixed;
       width: 100%;
@@ -122,32 +120,24 @@
 </head>
 <body>
 
-  <!-- Animasi Gradasi & Partikel -->
   <div class="gradient-bg"></div>
   <div id="particles-js"></div>
 
-  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">📚 Website Andrika Rahmasyaputra</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About Me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ContactUs.html">Contact Us</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">📚 Website Andrika Rahmasyaputra</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Beranda -->
   <section class="main-content" id="home">
@@ -163,11 +153,7 @@
       <table class="table table-bordered table-hover table-striped">
         <thead class="table-dark">
           <tr>
-            <th>No</th>
-            <th>Judul Buku</th>
-            <th>Penulis</th>
-            <th>Tahun</th>
-            <th>Kategori</th>
+            <th>No</th><th>Judul Buku</th><th>Penulis</th><th>Tahun</th><th>Kategori</th>
           </tr>
         </thead>
         <tbody>
@@ -186,35 +172,55 @@
     <h2>📅 Event Mendatang</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title text-success">Seminar Teknologi Informasi</h5>
-            <p class="card-text"><strong>Tanggal:</strong> 25 Mei 2025</p>
-            <p class="card-text"><strong>Tempat:</strong> Aula Fasilkom-TI USU</p>
-            <p class="card-text">Diskusi tren IT terbaru bersama para ahli industri.</p>
-          </div>
-        </div>
+        <div class="card h-100"><div class="card-body">
+          <h5 class="card-title text-success">Seminar Teknologi Informasi</h5>
+          <p class="card-text"><strong>Tanggal:</strong> 25 Mei 2025</p>
+          <p class="card-text"><strong>Tempat:</strong> Aula Fasilkom-TI USU</p>
+          <p class="card-text">Diskusi tren IT terbaru bersama para ahli industri.</p>
+        </div></div>
       </div>
       <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title text-success">Workshop HTML & CSS</h5>
-            <p class="card-text"><strong>Tanggal:</strong> 1 Juni 2025</p>
-            <p class="card-text"><strong>Tempat:</strong> Lab Komputer 2</p>
-            <p class="card-text">Pelatihan langsung membuat halaman web dari nol.</p>
-          </div>
-        </div>
+        <div class="card h-100"><div class="card-body">
+          <h5 class="card-title text-success">Workshop HTML & CSS</h5>
+          <p class="card-text"><strong>Tanggal:</strong> 1 Juni 2025</p>
+          <p class="card-text"><strong>Tempat:</strong> Lab Komputer 2</p>
+          <p class="card-text">Pelatihan langsung membuat halaman web dari nol.</p>
+        </div></div>
       </div>
       <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title text-success">Pelatihan Jaringan Komputer</h5>
-            <p class="card-text"><strong>Tanggal:</strong> 15 Juni 2025</p>
-            <p class="card-text"><strong>Tempat:</strong> Gedung E</p>
-            <p class="card-text">Belajar konfigurasi LAN, router, dan praktik jaringan.</p>
-          </div>
-        </div>
+        <div class="card h-100"><div class="card-body">
+          <h5 class="card-title text-success">Pelatihan Jaringan Komputer</h5>
+          <p class="card-text"><strong>Tanggal:</strong> 15 Juni 2025</p>
+          <p class="card-text"><strong>Tempat:</strong> Gedung E</p>
+          <p class="card-text">Belajar konfigurasi LAN, router, dan praktik jaringan.</p>
+        </div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- Tabel Perkalian Dinamis -->
+  <section class="main-content" id="perkalian-dinamis">
+    <h2>🧮 Perkalian Dinamis</h2>
+    <div class="mb-3 text-center">
+      <label for="angkaPerkalian" class="form-label">Pilih Angka:</label>
+      <select id="angkaPerkalian" class="form-select w-auto mx-auto">
+        <option value="">-- Pilih angka --</option>
+        <script>
+          for (let i = 1; i <= 10; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+          }
+        </script>
+      </select>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped text-center mt-3">
+        <thead class="table-dark">
+          <tr><th>x</th><th>Hasil</th></tr>
+        </thead>
+        <tbody id="hasilPerkalian">
+          <!-- Hasil akan ditampilkan di sini -->
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -228,47 +234,42 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 60,
-      density: { enable: true, value_area: 800 }
-    },
-    color: { value: "#ffffff" },
-    shape: {
-      type: "star", // Bisa diganti: "circle", "triangle", "edge", "polygon", "star"
-      stroke: { width: 0, color: "#000000" },
-      polygon: { nb_sides: 5 }
-    },
-    opacity: {
-      value: 0.5,
-      random: true
-    },
-    size: {
-      value: 6, // ukuran partikel
-      random: true
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#ffffff",
-      opacity: 0.2,
-      width: 1
-    },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: "none",
-      out_mode: "out"
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: { enable: true, mode: "grab" }
-    }
-  },
-  retina_detect: true
-});
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 }},
+        color: { value: "#ffffff" },
+        shape: { type: "star", stroke: { width: 0, color: "#000" }, polygon: { nb_sides: 5 }},
+        opacity: { value: 0.5, random: true },
+        size: { value: 6, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
+      },
+      interactivity: { events: { onhover: { enable: true, mode: "grab" }}},
+      retina_detect: true
+    });
 
+    // Tabel Perkalian Dinamis
+    const angkaSelect = document.getElementById("angkaPerkalian");
+    const hasilTabel = document.getElementById("hasilPerkalian");
+
+    angkaSelect.addEventListener("change", () => {
+      const angka = parseInt(angkaSelect.value);
+      hasilTabel.innerHTML = "";
+
+      if (!isNaN(angka)) {
+        for (let i = 1; i <= 10; i++) {
+          const row = document.createElement("tr");
+          const kolom1 = document.createElement("td");
+          const kolom2 = document.createElement("td");
+
+          kolom1.textContent = `${angka} x ${i}`;
+          kolom2.textContent = angka * i;
+
+          row.appendChild(kolom1);
+          row.appendChild(kolom2);
+          hasilTabel.appendChild(row);
+        }
+      }
+    });
   </script>
 </body>
 </html>
