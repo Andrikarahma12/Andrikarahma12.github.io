@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hubungi Saya</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Bootstrap CSS (Opsional jika ingin styling tambahan) -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', Lobster;
-    }
-
-    body, html {
+    html, body {
       height: 100%;
       margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      background: linear-gradient(to right, #00d2ff, #928DAB);
     }
 
     #particles-js {
@@ -37,11 +36,12 @@
       z-index: -1;
     }
 
-    body {
-      background: linear-gradient(to right, #00d2ff, #928DAB);
+    .main-content {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .contact-container {
@@ -115,37 +115,49 @@
       margin-top: 10px;
       color: white;
     }
+
+    footer {
+      text-align: center;
+      color: white;
+      padding: 15px 10px;
+      background-color: #111;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
   <div id="particles-js"></div>
 
-  <div class="contact-container">
-    <h2>Hubungi Saya</h2>
-    <form id="contactForm" action="https://formspree.io/f/mjkwlowo" method="POST">
-      <label for="nama">Nama</label>
-      <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+  <div class="main-content">
+    <div class="contact-container">
+      <h2>Hubungi Saya</h2>
+      <form id="contactForm" action="https://formspree.io/f/mjkwlowo" method="POST">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
 
-      <label for="message">Pesan</label>
-      <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
 
-      <button type="submit">Kirim Pesan</button>
-      <p id="form-status" class="status-message"></p>
-    </form>
+        <button type="submit">Kirim Pesan</button>
+        <p id="form-status" class="status-message"></p>
+      </form>
 
-    <div class="back-link">
-      <a href="index.html">&larr; Kembali ke Beranda</a>
+      <div class="back-link">
+        <a href="index.html">&larr; Kembali ke Beranda</a>
+      </div>
     </div>
   </div>
-  
-  <!-- Particles.js Library -->
+
+  <footer>
+    &copy; 2025 Andrika Rahmasyaputra. Semua Hak Dilindungi.
+  </footer>
+
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  
-  <!-- Particles JS Init -->
   <script>
     particlesJS("particles-js", {
       particles: {
@@ -197,16 +209,11 @@
       }
     });
   </script>
-  
- <!-- Footer -->
-  <footer>
-    &copy; 2025 Andrika Rahmasyaputra. Semua Hak Dilindungi.
-  </footer>
-  
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Form Handling Script -->
+  <!-- Form Handling -->
   <script>
     document.getElementById("contactForm").addEventListener("submit", async function (e) {
       e.preventDefault();
