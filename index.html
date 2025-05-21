@@ -139,12 +139,14 @@
     </div>
   </nav>
 
+  <!-- Beranda -->
   <section class="main-content" id="home">
     <h1>Selamat Datang di Website Andrika</h1>
     <p>Hai, saya <b>Andrika Rahmasyaputra</b>. Ini adalah website pertama saya yang dibuat saat belajar mata kuliah pengembangan web.</p>
     <a href="https://library.usu.ac.id/" target="_blank" class="btn btn-custom">Kunjungi Perpustakaan USU</a>
   </section>
 
+  <!-- Daftar Buku -->
   <section class="main-content" id="books">
     <h2>📖 Daftar Buku</h2>
     <div class="table-responsive">
@@ -165,6 +167,7 @@
     </div>
   </section>
 
+  <!-- Event -->
   <section class="main-content" id="events">
     <h2>📅 Event Mendatang</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -195,6 +198,7 @@
     </div>
   </section>
 
+  <!-- Tabel Perkalian Dinamis -->
   <section class="main-content" id="perkalian-dinamis">
     <h2>🧮 Perkalian Dinamis</h2>
     <div class="mb-3 text-center">
@@ -213,15 +217,19 @@
         <thead class="table-dark">
           <tr><th>x</th><th>Hasil</th></tr>
         </thead>
-        <tbody id="hasilPerkalian"></tbody>
+        <tbody id="hasilPerkalian">
+          <!-- Hasil akan ditampilkan di sini -->
+        </tbody>
       </table>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Andrika Rahmasyaputra. Semua Hak Dilindungi.
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
@@ -235,22 +243,9 @@
         line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
         move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
       },
-      interactivity: { events: { onhover: { enable: true, mode: "grab" } } },
+      interactivity: { events: { onhover: { enable: true, mode: "grab" }}},
       retina_detect: true
     });
-
-    // Cookie functions
-    function setCookie(name, value, days) {
-      const expires = new Date(Date.now() + days * 864e5).toUTCString();
-      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
-    }
-
-    function getCookie(name) {
-      return document.cookie.split('; ').reduce((r, v) => {
-        const parts = v.split('=');
-        return parts[0] === name ? decodeURIComponent(parts[1]) : r
-      }, '');
-    }
 
     // Tabel Perkalian Dinamis
     const angkaSelect = document.getElementById("angkaPerkalian");
@@ -259,8 +254,6 @@
     angkaSelect.addEventListener("change", () => {
       const angka = parseInt(angkaSelect.value);
       hasilTabel.innerHTML = "";
-
-      setCookie("angkaTerpilih", angka, 7); // Simpan ke cookie selama 7 hari
 
       if (!isNaN(angka)) {
         for (let i = 1; i <= 10; i++) {
@@ -277,7 +270,6 @@
         }
       }
     });
-    
   </script>
 </body>
 </html>
