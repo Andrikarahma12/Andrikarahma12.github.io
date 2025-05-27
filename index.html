@@ -243,7 +243,7 @@
         line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
         move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
       },
-      interactivity: { events: { onhover: { enable: true, mode: "grab" }}},
+      interactivity: { events: { onhover: { enable: true, mode: "grab" } } },
       retina_detect: true
     });
 
@@ -269,6 +269,28 @@
           hasilTabel.appendChild(row);
         }
       }
+    });
+
+    // ===== Cookie =====
+    function getCookies() {
+      return document.cookie.split("; ").reduce((acc, current) => {
+        const [key, value] = current.split("=");
+        acc[key] = value;
+        return acc;
+      }, {});
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      // Simpan cookie pengunjung jika belum ada
+      if (!document.cookie.includes("pengunjung")) {
+        const waktuKadaluarsa = new Date();
+        waktuKadaluarsa.setTime(waktuKadaluarsa.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 hari
+        document.cookie = `pengunjung=Andrika; expires=${waktuKadaluarsa.toUTCString()}; path=/`;
+      }
+
+      // Tampilkan cookie
+      const semuaCookie = getCookies();
+      alert("Cookie saat ini:\n" + Object.entries(semuaCookie).map(([k, v]) => `${k}: ${v}`).join("\n"));
     });
   </script>
 </body>
